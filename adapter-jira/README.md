@@ -29,7 +29,20 @@ Edit file `$JIRA_HOME/atlassian-jira/WEB-INF/web.xml`, add OIDC filter in these 
 ```
 * TODO configure OIDC adapter
 
+* Building
+With maven build two dependencies unresolved 
+```
+jta:jta:jar:1.0.1
+```
 
+```
+jndi:jndi:jar:1.2.1
+```
+Extract jndi.jar from https://download.oracle.com/otn-pub/java/jndi/1.2.1/jndi-1_2_1.zip
+add to local repo 
+```
+mvn install:install-file -DgroupId=jndi -DartifactId=jndi -Dversion=1.2.1 -Dpackaging=jar -Dfile=jndi.jar
+```
 
 License
 -------
